@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style tpe ="text/css">
+        @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+         @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
+         *{
+             margin: 0;
+             padding: 0;
+             list-style: none;
+             font-family: 'Noto Sans TC' ,sans-serif;
+         }
+
+         html,body{
+            height: 100%;
+            background-color: rgb(223, 223, 223);
+         }
+         body{
+            display: flex;
+            justify-content: center;
+             align-items: center;
+         }
+
+        .container{
+            width: 400px;
+            height: 400px;
+            border-radius: 7px;
+            background-color: rgb(107, 105, 122);
+        }
+
+        .container p{
+            width: 100%;
+            height: 80px;
+            font-size: 30px;
+            font-weight: 800;
+            color: white;
+            background-color: rgb(32, 30, 44);
+            border-radius: 7px 7px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile .id,
+        .profile .password{
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .profile input{
+            width: calc(100% - 105px);
+            background-color: yellowgreen;
+            border: none;
+        }
+        .profile .fa{
+            margin-left: 20px;
+            padding: 10px;
+            width: 30px;
+            background-color: rgb(32, 30, 44);
+            color: azure;
+            font-size: 22px;
+            border-radius:7px 0 0 7px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .profile input{
+            padding-left: 15px;
+            border-radius:0 7px 7px 0;
+            background-color: rgb(145, 149, 170);
+            font-weight: 600;
+            font-size: 18px;
+            color: rgb(204, 204, 204);
+            outline: none;
+            border: none;
+        }
+        .profile ::placeholder{
+           color: rgb(204, 204, 204);
+           font-weight: 600;
+       }
+
+        a{
+          text-decoration: none;
+          margin-left: 30px;
+          font-size: 16px;
+          color: rgb(212, 212, 212);
+          font-weight: 800;
+        }
+        button{
+           width: calc(100% - 60px);
+           border: none;
+           color: azure;
+           border-radius: 5px;
+           font-size: 20px;
+           font-weight: 800;
+           background-color: rgb(32, 30, 44);
+           margin: 10px 30px;
+           padding: 10px 0;
+       }
+       
+    </style>
+
+
+    <style>
+        @media screen and (max-width: 1000px){
+            .container{
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+            }
+            .profile input:focus {
+                font-size: 18px !important;
+                font-size: initial;
+            }
+        }
+
+        @media screen and (orientation: portrait) {
+
+        }
+        @media screen and (orientation: landscape) {
+ 
+        }
+    </style>
+</head>
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=3.0, user-scalable=yes">
+
+       <div class="container">
+           <p>Login Form</p>
+           <div class="profile">
+                <div class="id">
+                    <i class="fa fa-user-circle"></i>
+                    <input type="text" id="user_id" placeholder="ID">
+                </div>
+                <div class="password">
+                    <i class="fa fa-key"></i>
+                    <input type="text" id="password"placeholder="Password">
+                </div>
+           </div>
+
+
+           <a href="https://youtu.be/IAZ8rQLTnXY" target="_blank">Forgot password?</a>
+                <button class="btn">Login</button>
+       </div>
+  
+</body>
+</html>
