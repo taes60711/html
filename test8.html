@@ -23,7 +23,7 @@
         top: 0;
         z-index: 1;
         width: 100%;
-        height: 90px;
+        height: 70px;
         background-color: rgb(46, 54, 75);
         display: flex;
     }
@@ -32,14 +32,13 @@
     .containter a{
        height: 100%;
         margin-left: 20px;
-        font-size: 70px;
+        font-size: 60px;
         color: azure;
         display: flex;
         align-items: center;
     }
 
     .rightsidbar{
-       
         width: 100%;
         display: flex;
         justify-content: flex-end;
@@ -79,6 +78,31 @@
         background-color: rgb(32, 30, 44);   
         position: absolute;
     }
+
+
+   
+    
+    .rightbtnsidbar{
+        position: absolute;
+        right: 0px;
+        top: 55px;
+        width: 140px;
+        height: 0px;
+        background-color: rgb(32, 30, 44);  
+        border-radius: 5px;
+       display: flex;
+       flex-direction: column;
+       align-items: center;  
+       white-space:nowrap;
+        overflow: hidden;
+        transition: .4s;
+    }
+    .rightbtnsidbar a{
+        height: 100%;
+        font-size: 20px;
+        text-decoration: none;
+        margin: 5px;  
+    }
    </style>
 
 <style>
@@ -86,6 +110,9 @@
 
         .rightsidbar a{
             display: none;
+        }
+        .rightbtnsidbar a{
+            display: block;
         }
     }
 </style>
@@ -100,10 +127,32 @@
                     <a href="#ts">33分頁3</a>
                     <a href="">4分頁4</a>
                     <a href="">5555分頁5</a>
-                    <button class="btn"><i class="fa fa-chevron-down"></i></button>
+                    <button class="btn" onclick="rightsidbar1()">
+                        <i class="fa fa-chevron-down"></i>
+                        <div class="rightbtnsidbar" id="rightbtnsidbar">
+                            <a href="#imgcontainer">11分頁1</a>
+                            <a href="#menucontainer">222分頁2</a>
+                            <a href="#ts">33分頁3</a>
+                            <a href="">4分頁4</a>
+                            <a href="">5555分頁5</a>
+                        </div>
+                    </button>
                 </div>
+
         </div>
  
+        <script>  
+        function rightsidbar1() {
+            header5 = document.getElementById('rightbtnsidbar'); 
+                if(header5.style.height !="230px"){
+                    header5.style.width="140px";
+                    header5.style.height="230px";
+                }
+                else {
+                    header5.style.height="0px";
+                }
+            }
+        </script>
 
 
 
@@ -112,22 +161,13 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
+<!-----------------圖片欄----------------->
      <style>
         .upsider{
             top: 0;
             left: 0;
             right: 0;
-            height: 90px;
+            height: 70px;
         } 
         .imgcontainer{
             width: 100%;
@@ -146,8 +186,6 @@
             url('https://i.imgur.com/wq9eiYb.png');
             transition: .5s;
             position:relative;
-
-           
         }
         .imgbg[data-bg="1"]{
             background-image: url('https://i.imgur.com/wUN3FOo.png');
@@ -155,7 +193,7 @@
         .imgbg[data-bg="2"]{
             background-image: url('https://i.imgur.com/wq9eiYb.png');
         }
-
+        
       
         .imgbg button{
             float: right;
@@ -245,11 +283,9 @@
                 </div>
              </div>
         </div>
-    
-
         <style>
             @media screen and (max-width: 900px){
-        
+               
                 .imgbg button{
                     width: 30px;
                     height: 30px;
@@ -269,8 +305,6 @@
                 }
             }
         </style>
-
-
 
     <script>
         var bgs = ['https://i.imgur.com/Gxrp43r.jpg',
@@ -340,19 +374,20 @@
 
     </script>
         
+<!-----------------圖片欄----------------->
 
 
 
 
 
 
-
-
+<!-----------------第二欄----------------->
         <style>
             .menu{
                 width: 100%;
             }
-            .menu h3{
+            .menu h3,
+            .thirdwrap h3{
                 text-align: center;
                 color: azure;
                 font-size: 60px;
@@ -379,9 +414,6 @@
                 padding: 10px  20px;
                 color: azure;
             }
-
-
-
             
             .product h2{
                 color: azure;
@@ -395,39 +427,10 @@
                 color: rgb(179, 216, 250);
             }
 
-            .enlarge{
-              display: none;
-                background-color: rgb(32, 30, 44);   
-                top:200px;
-                bottom: 100px;
-                left: 30%;
-                right: 30%;
-                position: fixed;
-                border-radius: 10px;
-                
-            }
-
-            .enlarge h2{
-                text-align: center;
-                font-size: 48px;
-                margin-left: 20px;
-               padding-bottom: 10px;
-            }
-            .enlarge p{
-                font-size: 27px;
-                margin-left: 20px;
-                padding-bottom: 10px;
-            }
-            .enlarge img{
-                margin-top: 10px;
-                margin-left: 30px;
-                width: 90%;
-            }
-            .product button{
-                border: none;
-                background-color: transparent;
-            }
-
+           .menu h1{
+               position: absolute;
+                margin-top: -180px;
+           }
 
         </style>
 
@@ -437,7 +440,7 @@
                 .product{
                     display: flex;
                     flex-direction: column;
-                   align-items: center;
+                    align-items: center;
                 }
                 .product li{
                     width: 90%; 
@@ -446,81 +449,25 @@
                 .imgbg button{
                     margin-right: 30px;
                 }
-                .enlarge{
-                    left: 10%;
-                    right: 10%;
-                    top:20%;
-                    bottom: 10%;
-                }
-                .enlarge img{
-                    margin-left: 20px;
-                }
-
-                .enlarge h2{
-                    font-size: 20px;
-                }
-                .enlarge p{
-                font-size: 16px;
-                }
             }
         </style>
 
-
-
-        <script>
-        function ShowMeDate2(i) {
-            var test = document.getElementsByClassName("enlarge")[i];
-                if(test.style.display == "block"){
-                    test.style.display ="none";
-                }
-                else {
-                    test.style.display ="block";
-                }
-
-                for(j=0;j < 6;j++){
-                    if(j!=i){
-                        if( document.getElementsByClassName("enlarge")[j].style.display ="block"){
-                            document.getElementsByClassName("enlarge")[j].style.display="none";
-                        }
-                    }
-                }
-            }
-        </script>
-
     <div class="menu">
-        <h3>大標題</h3>
-        <div class="menucontainer" id="menucontainer">
+        <h3 >大標題</h3>
+        <h1 id="menucontainer"></h1>
+        <div class="menucontainer" >
             <ul class = "product">
                 <li>
-                    <button  display ="none" onclick="ShowMeDate2(0)" ><i class="fa fa-user-circle"></i></button>
-                    <div class="enlarge" id="enlarge">
-                        <h2>ProductName</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
-                            nobis sequi laudantium nam nesciunt esse sed </p>
-                            <div class="imgwrap">
-                                <img src="https://i.imgur.com/7DsB9MC.gif" alt="">
-                            </div>
-                            
-                    </div>
-
+                   <i class="fa fa-user-circle"></i>
                     <div class="txt">
                         <h2>ProductName</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
                              nobis sequi laudantium nam nesciunt esse sed </p>
                     </div>
-
-                   
                 </li>
 
                 <li>
-                    <button  onclick="ShowMeDate2(1)" ><i class="fa fa-object-group"></i></button>
-                    <div class="enlarge">
-                        <h2>ProductName2</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
-                            nobis sequi laudantium nam nesciunt esse sed </p>
-                            <img src="https://i.imgur.com/7DsB9MC.gif" alt="">
-                    </div>
-
+                    <i class="fa fa-object-group"></i>
                     <div class="txt">
                         <h2>ProductName</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
@@ -529,13 +476,7 @@
                  </li>
 
                  <li>
-                    <button  onclick="ShowMeDate2(2)" ><i class="fa fa-camera-retro"></i></button>
-                    <div class="enlarge">
-                        <h2>ProductName3</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
-                            nobis sequi laudantium nam nesciunt esse sed </p>
-                            <img src="https://i.imgur.com/7DsB9MC.gif" alt="">
-                    </div>
+                    <i class="fa fa-camera-retro"></i>
 
                     <div class="txt">
                         <h2>ProductName</h2>
@@ -546,13 +487,7 @@
 
                 <li>
 
-                    <button  onclick="ShowMeDate2(3)" ><i class="fa fa-globe"></i></button>
-                    <div class="enlarge">
-                        <h2>ProductName4</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
-                            nobis sequi laudantium nam nesciunt esse sed </p>
-                            <img src="https://i.imgur.com/7DsB9MC.gif" alt="">
-                    </div>
+                    <i class="fa fa-globe"></i>
                     
                     <div class="txt">
                         <h2>ProductName</h2>
@@ -562,13 +497,7 @@
                  </li>
 
                  <li>
-                    <button  onclick="ShowMeDate2(4)" > <i class="fa fa-gavel"></i></button>
-                    <div class="enlarge">
-                        <h2>ProductName5</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
-                            nobis sequi laudantium nam nesciunt esse sed </p>
-                            <img src="https://i.imgur.com/7DsB9MC.gif" alt="">
-                    </div>
+                    <i class="fa fa-gavel"></i>
                    
                     <div class="txt">
                         <h2>ProductName</h2>
@@ -578,15 +507,8 @@
                 </li>
 
                 <li>
-                    <button  onclick="ShowMeDate2(5)" >  <i class="fa fa-search"></i></button>
-                    <div class="enlarge">
-                        <h2>ProductName6</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
-                            nobis sequi laudantium nam nesciunt esse sed </p>
-                            <img src="https://i.imgur.com/7DsB9MC.gif" alt="">
-                    </div>
-
-                   
+                    <i class="fa fa-search"></i>
+                    
                     <div class="txt">
                         <h2>ProductName</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, veniam officia
@@ -596,9 +518,106 @@
             </ul>
         </div>
     </div>
+<!-----------------第二欄----------------->
 
 
 
+<style>
+    .thirdwrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+   }
+   .ws{
+       width: 70%;
+   }
+   .thirdcontainer{
+        display: flex;
+        margin-bottom: 20px;
+   }
+
+   .remote,
+   .local{
+       color: azure;
+       width: 100%;
+        background-color: rgb(64, 74, 102);
+   }
+
+   .remote h2,
+   .local h2{
+       padding-bottom: 10px;
+   }
+   .local .text,
+   .remote .text{
+    padding: 30px;
+   }
+  
+   .remote {
+       display: flex;
+       justify-content: flex-end;
+   }
+   .local .text{
+        width: 60%;
+   }
+   .remote .text{
+       width: 60%;
+       order: -1;
+   }
+   .thirdwrapimg img{
+        max-width: 100%;
+   }
+
+</style>
+
+<style>
+    @media screen and (max-width: 900px){
+        .thirdcontainer{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .local .text,
+        .remote .text{
+            padding: 0px;
+         }
+        .local .text,
+        .remote .text{
+            order: 0;
+            width: 100%;
+        }
+
+    }
+</style>
+
+<div class="thirdwrap">
+    <h3>大標題</h3>
+    <div class="ws">
+        <div class="thirdcontainer local">
+            <div class="thirdwrapimg">
+                <img src="https://i.imgur.com/7DsB9MC.gif" alt="">
+            </div>
+            <div class="text">
+                <h2>大標題</h2>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum laborum non mollitia, iste necessitatibus odit quasi praesentium blanditiis totam sit repellat ipsum velit officiis eius modi laudantium, aperiam culpa. Earum!
+            </div>
+        </div>
+       
+        <div class="thirdcontainer remote">
+            <div class="thirdwrapimg">
+                <img src="https://i.imgur.com/7DsB9MC.gif" alt="">
+            </div>
+            <div class="text">
+                <h2>大標題</h2>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum laborum non mollitia, iste necessitatibus odit quasi praesentium blanditiis totam sit repellat ipsum velit officiis eius modi laudantium, aperiam culpa. Earum!
+            </div>
+        </div>
+        
+    </div>
+       
+        
+
+</div>
 
 
    
