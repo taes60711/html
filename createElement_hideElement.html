@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    <script type="text/javascript">
+
+        function modeChange(value){
+
+            if(value=="AMode"){
+                document.getElementById('test').style.display = "";
+                var parent = document.getElementById("AModeContainer");
+                var child = document.getElementById("Div2");
+                if(child!=null)
+                    parent.removeChild(child);
+            }
+            else if(value=="Reset"){
+                document.getElementById('test').style.display = "none";
+                CreateCompent();
+            }
+        }
+
+        function CreateCompent(){
+           
+                var para = document.getElementById("AModeContainer");
+                var select = document.createElement("select");
+
+                var option = document.createElement("option");
+                var option1 = document.createElement("option");
+
+                option.text = 4;
+                option.value = 4;
+
+                option1.text = 5;
+                option1.value = 5;
+
+                select.add(option,true);
+                select.add(option1,true);
+                select.appendChild(option);
+
+                select.setAttribute("id", "Div2");
+                select.setAttribute("name", "selectedMode");
+                para.appendChild(select);
+        }
+        
+        window.onload = CreateCompent;
+    </script>
+
+    <style type ="text/css">
+         *{
+             margin: 0;
+             padding: 0;
+         }
+         html,body{
+            height: 100%;
+            background-color: rgb(223, 223, 223);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+       
+    </style>
+</head>
+    <body>
+        <form action="" method="post" >
+            <div class="container">
+
+                <select name="modeController" onchange="modeChange(this.value)">
+                    <option value="Reset" selected>Reset</option>
+                    <option value="AMode" >AMode</option>
+                </select>
+
+                <div id="AModeContainer">
+                    <label for="subscribeModeTitle" id="test">A:</label>
+                </div>
+
+                <div class="buttonContainer">
+                    <input type="submit"  class="btn" value="Post">
+                </div>
+
+            </div>
+        </form>
+    </body>
+</html>
