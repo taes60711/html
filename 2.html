@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type ="text/css">
+         *{
+             margin: 0;
+             padding: 0;
+         }
+         html,body{
+            height: 100%;
+            background-color: rgb(223, 223, 223);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .profile{
+            display: flex;
+            flex-direction: column;
+            margin: 0px 30px;
+            padding: 0 0 30px 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 710px;
+            background-color: rgb(206, 205, 211);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #bbbbbb;
+            
+        }
+
+        p{
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            color: rgb(32, 30, 44);
+            padding: 20px;
+            font-weight: 600;
+        }
+        .buttonContainer{
+            margin: 5px 15px;
+        }
+        .btn{
+           width: 100%;
+           border: none;
+           color: azure;
+           font-size: 20px;
+           background-color: rgb(32, 30, 44);
+           padding: 5px;
+       }
+      
+       .setttingConatiner input,select{
+        margin: 5px 0 0 0;
+        padding: 5px;
+       }
+
+       .otherContainer{
+        margin: 5px 15px;
+       }
+    </style>
+</head>
+    <body>
+        <div class="container">
+            <form action="" method="post" class="setttingConatiner">
+                <p>設定</p>
+                <div class="profile">
+                    <label for="linetokenTitle">Line token:</label>
+                    <input type="text" name="lineToken" placeholder="Line token" value="__lineToken__">
+                    <label for="lineMessageTitle">Line 訊息:</label>
+                    <input type="text" name="lineMessage"placeholder="Line 訊息" value="__lineMessage__">
+
+                    <label for="IOControllerTitle">IO觸發型態:</label>
+                    <select name="IOController">
+                        <option value="NC" selected>NC</option>
+                        <option value="NO">NO</option>
+                    </select>
+                    <label for="waringPostNumberTitle">警報時發布line次數:</label>
+                    <input type="text" name="waringPostNumber"placeholder="警報時發布line次數" value="__linePostNumber__">
+                    <label for="intervalTitle">各次警報間隔:</label>
+                    <input type="text" name="interval"placeholder="各次警報間隔" value="__interval__">
+                    <label for="intervalSecTitle">持續警報時間間隔:</label>
+                    <input type="text" name="intervalSec"placeholder="持續警報時間間隔" value="__intervalSec__">
+                    <label for="intervalInfoEditTitle">定時發報訊息內容編輯:</label>
+                    <input type="text" name="intervalInfoEdit"placeholder="定時發報訊息內容編輯" value="__intervalInfoEdit__">
+                    <label for="intervalMessageTitle">定時時間間隔:</label>
+                    <input type="text" name="intervalMessage"placeholder="定時時間間隔" value="__intervalMessage__">
+                   
+                </div>
+                <div class="buttonContainer">
+                    <input type="submit"  class="btn" value="Post">
+                </div>
+            </form>
+       
+            <form action="" method="post" class="otherContainer" >
+                <input type="hidden" name="tryWaring" value="1">
+                <input type="submit"  class="btn" value="試發警報">
+            </form>
+        
+            <form action="" method="post" class="otherContainer" >
+                <input type="hidden" name="closeIntervalMessage" value="1">
+                <input type="submit"  class="btn" value="關閉定時訊息">
+            </form>
+        </div>
+
+        
+        
+    </body>
+</html>
